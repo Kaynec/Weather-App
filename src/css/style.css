@@ -1,0 +1,187 @@
+/* Css Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* The main styling */
+body {
+	line-height: 1;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	height: 100vh;
+	position: relative;
+}
+body::before{
+content: "";
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -2;
+background: #263859;
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+header {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+header h1 {
+	text-align: center;
+	color: rgb(231, 231, 238);
+	font-weight: bolder;
+	margin-top: 1rem;
+	font-size: 1.75rem;
+}
+#searchDiv {
+	padding: 2rem;
+}
+#submitLocation {
+	background: transparent;
+	color: white;
+	border: 2px solid transparent;
+	font-size: 1.25rem;
+}
+#submitLocation:hover {
+	color: #e3e3e3;
+	transform: scale(1.25);
+}
+#grid {
+	position: relative;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	line-height: 1.4;
+	padding: 2rem;
+	margin: 0 auto;
+	background:rgba(59, 72, 72, 0.625);
+	flex: 1;
+	flex-basis: 32.8%;
+	flex-grow: initial;
+	border-radius: 10px;
+	margin: 1rem;
+	transition: all .2s ease;
+}
+#grid div {
+	margin: .75em;
+	text-align: center;
+}
+#grid a {
+	text-decoration: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: .25rem;
+	color: #e3e3e3;
+}
+
+#imageAndTemp {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	color: yellow;
+}
+
+#nameAndCountry {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#nameAndCountry img {
+	width: 35px;
+	height:35px;
+	border-radius: 8%;
+	margin: 0.75rem;
+}
+
+input[type="text"] {
+	background: transparent;
+	border: none;
+	border-bottom: 3px solid white;
+	margin-right: .25rem;
+	color: white;
+	transition:all .2s ease ;
+}
+
+input[type="text"]:hover {
+	background: #375285;
+}
+
+#cityError {
+	color: yellow;
+	padding: 1rem;
+	margin-top:.25rem ;
+	text-align: center;
+	font-size: 1.75rem;
+}
+#close {
+	transition: all 0.2s ease;
+	margin: .5rem;
+}
+#close:hover {
+	transform: scale(1.1);
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+
+
+
+@keyframes append-animate {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+.new-box {
+	transform-origin: 50% 0;
+	animation: append-animate .3s linear;
+}
