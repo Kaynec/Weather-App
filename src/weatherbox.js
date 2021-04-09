@@ -29,6 +29,10 @@ const ContextualFragment = await document.createRange().createContextualFragment
 </div>`)
 
 const grid = ContextualFragment.querySelector('#grid')
+grid.style.order=1
+document.querySelectorAll('#grid').forEach(element => {
+  if (element != grid) element.style.order+=1
+});
 const close = await grid.querySelector('#close')
 
 
@@ -41,9 +45,7 @@ grid.classList.add('new-box')
 await close.addEventListener('click', () => {
   document.querySelector('#container').removeChild(grid)
 })
-// await close.addEventListener('touchend', () =>{
-//   document.querySelector('#container').removeChild(grid)
-// })
+
 }
 
 // Show Error if City can't Be Found

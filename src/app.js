@@ -1,7 +1,6 @@
 import style from './css/style.css'
 import {makeGrid} from './weatherbox'
 
-
 const cityError = document.getElementById('cityError')
 cityError.style.display='none'
 
@@ -16,8 +15,6 @@ const getWeatherInfo= async (location,unit)=>{
 const button = document.getElementById('submitLocation')
 
 button.addEventListener('click',(e)=>sendDataToDom(e))
-// button.addEventListener('touchend',(e)=>sendDataToDom(e))
-
 
 const sendDataToDom= async (e)=>{
     const location = await getWeatherInfo(e.target.parentElement.previousElementSibling.value.toLowerCase(),'metric')
