@@ -41,9 +41,9 @@ grid.classList.add('new-box')
 await close.addEventListener('click', () => {
   document.querySelector('#container').removeChild(grid)
 })
-await close.addEventListener('touchend', () =>{
-  document.querySelector('#container').removeChild(grid)
-})
+// await close.addEventListener('touchend', () =>{
+//   document.querySelector('#container').removeChild(grid)
+// })
 }
 
 // Show Error if City can't Be Found

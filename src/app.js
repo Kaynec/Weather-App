@@ -16,7 +16,7 @@ const getWeatherInfo= async (location,unit)=>{
 const button = document.getElementById('submitLocation')
 
 button.addEventListener('click',(e)=>sendDataToDom(e))
-button.addEventListener('touchend',(e)=>sendDataToDom(e))
+// button.addEventListener('touchend',(e)=>sendDataToDom(e))
 
 
 const sendDataToDom= async (e)=>{
