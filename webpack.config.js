@@ -14,7 +14,6 @@ module.exports = {
 		// We no not want to minimize our code.
 		minimize: false
 	},
-
    module: {
 
     rules:[
@@ -26,8 +25,6 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
 
       },
-
-// babel loader
 {
   test: /\.(js)$/,
   exclude: /node_modules/,

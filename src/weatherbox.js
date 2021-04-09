@@ -1,8 +1,11 @@
-module.exports= async (location)=>{
+import {load} from './loading' 
+export {makeGrid}
 
-
+const makeGrid = async (location)=>{
 // Display The Error if No City Is Found
 if (!location.weather) cityNotFound()
+if (location.weather) load.loading()
+document.querySelector('input').value=""
 
 const response = await fetch(`http://openweathermap.org/img/wn/${location.weather[0].icon}@2x.png`)
 let imgSrc = await response.url
@@ -26,25 +29,29 @@ const ContextualFragment = await document.createRange().createContextualFragment
 </div>`)
 
 const grid = ContextualFragment.querySelector('#grid')
-document.querySelector('#container').append(grid)
-grid.classList.add('new-box')
-
 const close = await grid.querySelector('#close')
 
-await close.addEventListener('click', (e) => {
+
+document.querySelector('#container').append(grid)
+
+load.loaded()
+
+grid.classList.add('new-box')
+
+await close.addEventListener('click', () => {
+  document.querySelector('#container').removeChild(grid)
+})
+await close.addEventListener('touchend', () =>{
   document.querySelector('#container').removeChild(grid)
 })
 }
-
 
 // Show Error if City can't Be Found
 function cityNotFound() {
   const cityError = document.getElementById('cityError')
   cityError.style.display='block'
-  const input = document.querySelector('input')
-  input.value=""
+  document.querySelector('input').value=""
   setTimeout(() => {
     cityError.style.display='none'
   }, 2500);
-  console.log(cityError,cityError.style.display)
 }
